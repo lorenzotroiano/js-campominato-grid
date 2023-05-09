@@ -18,17 +18,44 @@
 
 let container = document.getElementById("container");
 
+const buttonGenera = document.getElementById("genera");
 
 
 
 
-for (let i = 0; i < 100; i++) {
 
-    const nuovoQuadrato = createContainerSquare("div", "square")
+buttonGenera.addEventListener("click",
+function() {
 
-    container.append(nuovoQuadrato);
+    for (let i = 1; i <= 100; i++) {
 
-}
+        const nuovoQuadrato = createContainerSquare("div", "square")
+    
+        nuovoQuadrato.addEventListener("click", 
+        function() {
+
+            nuovoQuadrato.classList.add('blue');
+        })
+       
+
+        const createSpan = document.createElement('span');
+        createSpan.append(i);
+        
+       
+           
+           
+        
+    
+        nuovoQuadrato.append(createSpan);
+    
+        container.append(nuovoQuadrato);
+ 
+    
+    }
+
+})
+
+
 
 
 
@@ -47,3 +74,6 @@ function createContainerSquare(prendiElement, prendiClass){
     return newElement
 
 }
+
+
+// FUNZIONE PER GENERARE NUMERI
